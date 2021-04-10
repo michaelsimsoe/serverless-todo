@@ -16,6 +16,14 @@ Given a frontend we were tasked to create a somewhat basic Todo App using the Se
 
 ### Local development
 
+### Deployment
+
+You need to create an IAM user for AWS, and then to configure it for `serverless` to use:
+
+```bash
+sls config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR_SECRET_KEY --profile serverless
+```
+
 ## From original README
 
 # Serverless TODO
