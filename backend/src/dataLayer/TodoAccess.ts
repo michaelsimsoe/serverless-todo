@@ -8,7 +8,7 @@ export class TodoAccess {
     private readonly todoTable = process.env.TODO_TABLE
   ) {}
 
-  async getAllTodos(): Promise<TodoItem[]> {
+  async getAllTodos(userId: string): Promise<TodoItem[]> {
     console.log('Getting all todo');
 
     const params = {
@@ -18,7 +18,7 @@ export class TodoAccess {
         '#userId': 'userId'
       },
       ExpressionAttributeValues: {
-        ':userId': '1'
+        ':userId': userId
       }
     };
 

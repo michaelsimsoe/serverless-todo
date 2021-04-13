@@ -15,8 +15,11 @@ export const handler: APIGatewayProxyHandler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
   logger.info('Processing Event ', event);
+  const authorization = event.headers.Authorization;
+  const split = authorization.split(' ');
+  const jwtToken = split[1];
 
-  const toDos = await getAllTodos();
+  const toDos = await getAllTodos(jwtToken);
 
   return {
     statusCode: 200,
