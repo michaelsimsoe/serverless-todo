@@ -1,10 +1,6 @@
 import 'source-map-support/register';
 
-import {
-  APIGatewayProxyEvent,
-  APIGatewayProxyResult,
-  APIGatewayProxyHandler
-} from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 
 import { getAllTodos } from '../../businessLogic/todos';
 import { createLogger } from '../../utils/logger';
